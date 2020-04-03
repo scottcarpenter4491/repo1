@@ -1,0 +1,26 @@
+import plotly.graph_objs as go
+from plotly.offline import iplot, init_notebook_mode
+init_notebook_mode(connected=True)
+import plotly.plotly as py
+
+trace0 = go.Bar(x = ['Bibiana Ayala', 'Guadalupe Betancourt', 'Carmen Bucatera', 'Efrain Castro', 'Edwin Granados', 'Anqi Liu', 
+                     'Alejandro Maldonado', 'Natali Ramirez', 'Miguel Razo', 'Aiko Rosario', 'Ana Rosas', 'Guadalupe Sanchez', 
+                     'Daysi Solorano', 'Ana Zafra'],
+y = [226, 230, 225, 212, 229, 216, 232, 232, 233, 230, 228, 218, 233, 225],
+name = 'First test score',
+text = ['Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 
+        'Fail', 'Fail', 'Fail', 'Fail']) 
+
+trace1 = go.Bar(x = ['Bibiana Ayala', 'Guadalupe Betancourt', 'Carmen Bucatera', 'Efrain Castro', 'Edwin Granados', 'Anqi Liu', 
+                     'Alejandro Maldonado', 'Natali Ramirez', 'Miguel Razo', 'Aiko Rosario', 'Ana Rosas', 'Guadalupe Sanchez', 
+                     'Daysi Solorano', 'Ana Zafra'],
+y = [230, 0, 226, 229, 0, 224, 225, 232, 239, 0, 232, 233, 0, 226],
+name = 'Second test score',
+text = ['Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Fail', 'Pass', 'Fail', 
+        'Fail', 'Fail', 'Fail', 'Fail']) 
+
+data = [trace0, trace1]
+layout = go.Layout({'title': 'CASAS test scores',
+'xaxis': {'title': 'Students'},
+'yaxis': {'title': 'Score'}}, bargap=0.5)
+iplot({'data': data, 'layout': layout})
